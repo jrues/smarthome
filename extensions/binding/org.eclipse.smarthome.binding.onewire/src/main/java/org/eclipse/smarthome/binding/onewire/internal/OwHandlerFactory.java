@@ -22,6 +22,7 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.smarthome.binding.onewire.internal.discovery.OwDiscoveryService;
 import org.eclipse.smarthome.binding.onewire.internal.handler.DigitalIOThingHandler;
+import org.eclipse.smarthome.binding.onewire.internal.handler.EDSSensorThingHandler;
 import org.eclipse.smarthome.binding.onewire.internal.handler.IButtonThingHandler;
 import org.eclipse.smarthome.binding.onewire.internal.handler.MultisensorThingHandler;
 import org.eclipse.smarthome.binding.onewire.internal.handler.OwserverBridgeHandler;
@@ -75,6 +76,8 @@ public class OwHandlerFactory extends BaseThingHandlerFactory {
             return new DigitalIOThingHandler(thing, dynamicStateDescriptionProvider);
         } else if (MultisensorThingHandler.SUPPORTED_THING_TYPES.contains(thingTypeUID)) {
             return new MultisensorThingHandler(thing, dynamicStateDescriptionProvider);
+        } else if (EDSSensorThingHandler.SUPPORTED_THING_TYPES.contains(thingTypeUID)) {
+            return new EDSSensorThingHandler(thing, dynamicStateDescriptionProvider);
         }
         return null;
     }

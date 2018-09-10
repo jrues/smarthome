@@ -37,5 +37,11 @@ public enum OwSensorType {
     AMS_S,
     BMS,
     BMS_S,
+    EDS,
+    EDS0064,
+    EDS0065,
+    EDS0066,
+    EDS0067,
+    EDS0068,
     UNKNOWN;
 }
